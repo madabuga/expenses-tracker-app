@@ -3,15 +3,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./App.css";
 
-import { ExpensesList } from "./components/expenses/ExpensesList";
+import { Dashboard } from "./pages/dashboard/Dashboard";
 
 
 function App() {
   return (
     <Router>
       <div className="container">
-        <br />
-        <Route path="/" exact component={ExpensesList} />
+        <Route path="/" exact component={Dashboard} />
       </div>
     </Router>
   );
