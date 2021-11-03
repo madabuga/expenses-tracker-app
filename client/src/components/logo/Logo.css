@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+
+.logo {
+    margin: 1rem 0 0 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon-logo {
+    height: 2.1rem;
+    width: 2.1rem;
+    margin-right: 0.5rem;
+}
+
+.first-text-logo {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    font-family: 'Volkhov', serif;
+}
+
+.line-logo {
+    height: 0.05rem;
+    width: 14.5rem;
+    background-color: rgb(46, 5, 58);
+    margin-bottom: 0.2rem;
+    margin-top: 0.1rem;
+}
+
+.second-text-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+}
