@@ -1,0 +1,10 @@
+.expenses-list {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.048), 0 6px 10px 0 rgba(0, 0, 0, 0.096);
+    min-height: 25rem;
+    max-height: 25rem;
+    overflow-y: scroll;
+    min-width: 32rem;
+}

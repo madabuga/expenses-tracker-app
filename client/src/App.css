@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+
 .app {
   display: flex;
+  font-family: 'Cabin', sans-serif;
+  background-color: rgb(236, 236, 236);
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem; 
+  background-color: rgba(0, 0, 0, 0.014);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.144);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba(0, 0, 0, 0.637);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(0, 0, 0, 0.801);
+  border-radius: 100px;
 }

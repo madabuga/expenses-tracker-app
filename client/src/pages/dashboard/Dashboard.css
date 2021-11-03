@@ -1,3 +1,40 @@
 .dashboard-page {
     margin-left: 1rem;
 }
+
+.dashboard-header {
+    margin: 3rem 0 0 1rem;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem 0 0.5rem 0;
+}
+
+#date {
+    margin-left: 1.2rem;
+    padding: 0 1rem 0 1rem;
+    border-radius: 2%;
+    font-size: 0.9rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.048), 0 6px 10px 0 rgba(0, 0, 0, 0.096);
+}
+
+.add-new-memo {
+    color: #000;
+    outline: none;
+    text-decoration: none;
+}
+
+.add-new-memo-btn {
+    background-color: rgb(29, 28, 28);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.8rem;
+    color: #FFF;
+    font-size: 2rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}

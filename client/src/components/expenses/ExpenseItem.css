@@ -1,0 +1,33 @@
+.expense-item {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    display: flex;
+    font-size: 0.9rem;
+}
+
+.expense-item:hover {
+    cursor: pointer;
+    background-color: rgb(228, 228, 228);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.048), 0 6px 10px 0 rgba(0, 0, 0, 0.096);
+}
+
+.expense-item-information {
+    width: 30rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .edit-option-item {
+    color: #000;
+    margin-left: 1rem;
+}
+
+.delete-option-item {
+    color: rgb(43, 20, 20);
+    margin-left: 0.5rem;
+}
+
+.edit-option-item-icon,
+.delete-option-item-icon {
+    height: 0.7rem;
+    width: 0.7rem;
+} */

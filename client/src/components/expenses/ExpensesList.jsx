@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { ExpenseItem } from './ExpenseItem';
 
-const Expense = props => (
-    <tr>
-        <td>{props.expense.memo}</td>
-        <td>{props.expense.total}</td>
-        <td>{props.expense.date.substring(0, 10)}</td>
-        <td>
-            <Link to={"/edit/" + props.expense._id}>edit</Link> <a href="/" onClick={() => { props.deleteExpense(props.expense._id) }}>delete</a>
-        </td>
-    </tr>
-)
+import './ExpensesList.css';
+
 
 class ExpensesList extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { expenses: [] };
+        this.state = {
+            expenses: [],
+            list: []
+        };
     }
 
     componentDidMount() {
@@ -41,26 +36,17 @@ class ExpensesList extends Component {
 
     expensesList() {
         return this.state.expenses.map(currentExpense => {
-            return <Expense expense={currentExpense} deleteExpense={this.deleteExpense} key={currentExpense._id} />;
+            if (Number(this.props.selectedMonth) === Number(currentExpense.date.substring(0, 10).split("-")[1])) {
+                return <ExpenseItem expense={currentExpense} deleteExpense={this.deleteExpense} key={currentExpense._id} />;
+            }
+            return null
         })
     }
 
     render() {
         return (
-            <div>
-                <h3>Expenses</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Memo</th>
-                            <th>Total</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.expensesList()}
-                    </tbody>
-                </table>
+            <div className="expenses-list">
+                {this.expensesList()}
             </div>
         )
     }
