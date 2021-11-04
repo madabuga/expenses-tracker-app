@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import "./Dashboard.css";
 
 import { ExpensesList } from "../../components/expenses/ExpensesList";
+import { TotalTracker } from '../../components/total-tracker/TotalTracker';
 
 
 class Dashboard extends Component {
@@ -13,12 +14,22 @@ class Dashboard extends Component {
         super(props)
 
         this.state = {
-            selectedMonth: new Date().getMonth() + 1
+            selectedMonth: new Date().getMonth() + 1,
+            data: []
+            // numberOfDaysInSelectedMonth: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate()
         }
     }
 
     handleOnDateChange = (event) => {
-        this.setState({ selectedMonth: event.target.value.split("-")[1] })
+        let eventValue = event.target.value
+        this.setState({
+            selectedMonth: Number(eventValue.split("-")[1]),
+            // numberOfDaysInSelectedMonth: new Date(Number(eventValue.split("-")[0]), Number(eventValue.split("-")[1]), 0).getDate()
+        })
+    }
+
+    handleCallback = (childData) => {
+        this.setState({ data: childData })
     }
 
     render() {
@@ -42,7 +53,14 @@ class Dashboard extends Component {
                         <div title="Add expense/income" className="add-new-memo-btn">+</div>
                     </Link>
                 </div>
-                <ExpensesList selectedMonth={this.state.selectedMonth} />
+                <div className="expenses-container">
+                    <ExpensesList
+                        selectedMonth={this.state.selectedMonth}
+                        parentCallback={this.handleCallback} />
+                    <TotalTracker
+                        selectedMonth={this.state.selectedMonth}
+                        expenses={this.state.data} />
+                </div>
 
             </div>
         )

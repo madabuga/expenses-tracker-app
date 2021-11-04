@@ -14,7 +14,13 @@ class ExpenseItem extends Component {
                 {/* {console.log(props.expense.date.substring(0, 10).split("-"))} */}
                 <div className="expense-item-information">
                     <div>{this.props.expense.memo}</div>
-                    <div>{this.props.expense.total}</div>
+                    <div>
+                        {
+                            this.props.expense.categoryType === "expense" ?
+                                "- " + this.props.expense.total :
+                                this.props.expense.total
+                        }
+                    </div>
                 </div>
                 {/* <Link
                     className="edit-option-item"

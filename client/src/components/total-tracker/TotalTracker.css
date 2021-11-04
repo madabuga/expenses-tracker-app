@@ -1,0 +1,33 @@
+.total-tracker {
+    height: 7rem;
+    width: 35rem;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.048), 0 6px 10px 0 rgba(0, 0, 0, 0.096);
+    margin-left: 3rem;
+    margin-top: -5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.total-tracker-item {
+    margin: 1rem 0.2rem 1rem 0.2rem;
+    background-color: rgb(31, 31, 43);
+    color: rgb(199, 199, 199);
+    height: 5rem;
+    width: 20rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-type {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.1rem;
+}
+
+.total-sum {
+    font-size: 1.1rem;
+    letter-spacing: 0.08rem;
+}

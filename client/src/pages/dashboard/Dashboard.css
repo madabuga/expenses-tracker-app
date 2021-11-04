@@ -3,9 +3,10 @@
 }
 
 .dashboard-header {
-    margin: 3rem 0 0 1rem;
+    margin: 3rem 0 0 2rem;
     display: flex;
     justify-content: space-around;
+    width: 32rem;
     padding-top: 0.5rem 0 0.5rem 0;
 }
 
@@ -37,4 +38,8 @@
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
+}
+
+.expenses-container {
+    display: flex;
 }

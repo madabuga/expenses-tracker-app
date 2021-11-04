@@ -11,11 +11,15 @@ router.route('/add').post((req, res) => {
     const memo = req.body.memo;
     const total = Number(req.body.total);
     const date = Date.parse(req.body.date);
+    const categoryType = req.body.categoryType;
+    const categoryName = req.body.categoryName;
 
     const newExpense = new Expense({
         memo,
         total,
         date,
+        categoryType,
+        categoryName
     });
 
     newExpense.save()
@@ -42,6 +46,8 @@ router.route('/update/:id').post((req, res) => {
             expense.description = req.body.description;
             expense.duration = Number(req.body.duration);
             expense.date = Date.parse(req.body.date);
+            expense.categoryType = req.body.categoryType;
+            expense.categoryName = req.body.categoryName;
 
             expense.save()
                 .then(() => res.json('Expense updated!'))
