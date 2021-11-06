@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import "./AddExpenseForm.css";
 
@@ -39,10 +41,15 @@ class AddExpenseForm extends Component {
         window.location = '/';
     }
 
+    onTrigger = () => {
+        this.props.parentDashboardCallback(false);
+    }
+
     render() {
         return (
             <div className="blur-container">
                 <form className="add-expense-form" onSubmit={this.onSubmit}>
+                    <FontAwesomeIcon onClick={this.onTrigger} className="close-window-popup-icon" icon={faTimes} />
                     <div className="div-p-title">
                         <p>Complete the fields below for </p>
                         <p>adding a new expense / income</p>

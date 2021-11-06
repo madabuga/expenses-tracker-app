@@ -33,6 +33,10 @@ class Dashboard extends Component {
         this.setState({ data: childData })
     }
 
+    handleAddExpenseFormCallback = (childData) => {
+        this.setState({ isPressedAddExpenseBtn: childData })
+    }
+
     renderAddForm = () => {
         this.setState({ isPressedAddExpenseBtn: true })
     }
@@ -44,7 +48,7 @@ class Dashboard extends Component {
 
         return (
             <div className="dashboard-page">
-                {this.state.isPressedAddExpenseBtn && <AddExpenseForm selectedMonth={this.state.selectedMonth} />}
+                {this.state.isPressedAddExpenseBtn && <AddExpenseForm parentDashboardCallback={this.handleAddExpenseFormCallback} selectedMonth={this.state.selectedMonth} />}
                 <div className="dashboard-header">
                     <input
                         type="month"
@@ -57,7 +61,6 @@ class Dashboard extends Component {
                         className="add-new-memo"
                         onClick={this.renderAddForm}
                     >
-                        {/* to={"/add/"}> */}
                         <div title="Add expense/income" className="add-new-memo-btn">+</div>
                     </div>
                 </div>

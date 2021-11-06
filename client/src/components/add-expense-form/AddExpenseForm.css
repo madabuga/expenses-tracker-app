@@ -25,7 +25,7 @@
 }
 
 .div-p-title {
-    margin: 2rem 0 1rem 0;
+    margin: 0 0 1rem 0;
     padding: 0;
 }
 
@@ -59,4 +59,11 @@ select,
 .confirm-btn-add-expense-income:hover {
     cursor: pointer;
     background-color: rgb(29, 28, 34);
+}
+
+.close-window-popup-icon {
+    align-self: flex-end;
+    margin: 1rem 1rem 0 0;
+    cursor: pointer;
+    font-size: 1.4rem;
 }
