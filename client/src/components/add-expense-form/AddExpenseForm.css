@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+
+.blur-container {
+    position: absolute;
+    height: 100vh;
+    width: 88.4vw;
+    margin-top: -6.8rem;
+    margin-left: -1.1rem;
+    background-color: rgba(0, 0, 0, 0.788);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-expense-form {
+    height: 70vh;
+    width: 48vw;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.048), 0 6px 10px 0 rgba(0, 0, 0, 0.096);
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.div-p-title {
+    margin: 2rem 0 1rem 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+select, 
+.confirm-btn-add-expense-income {
+    font-family: 'Cabin', sans-serif;
+    width: 24rem;
+    height: 2.7rem;
+    margin: 0.2rem 0 0.2rem 0;
+    outline: none;
+    padding: 0.3rem;
+    border: none;
+    background-color: rgb(211, 211, 211);
+    letter-spacing: 0.05rem;
+}
+
+.confirm-btn-add-expense-income {
+    height: 3.3rem;
+    background-color: black;
+    color: #FFF;
+    letter-spacing: 0.15rem;
+    font-weight: 700;
+}
+
+.confirm-btn-add-expense-income:hover {
+    cursor: pointer;
+    background-color: rgb(29, 28, 34);
+}

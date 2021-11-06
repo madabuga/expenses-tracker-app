@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 import "./Dashboard.css";
 
-import { ExpensesList } from "../../components/expenses/ExpensesList";
+import { ExpensesList } from '../../components/expenses/ExpensesList';
 import { TotalTracker } from '../../components/total-tracker/TotalTracker';
+import { AddExpenseForm } from '../../components/add-expense-form/AddExpenseForm';
 
 
 class Dashboard extends Component {
@@ -15,7 +15,8 @@ class Dashboard extends Component {
 
         this.state = {
             selectedMonth: new Date().getMonth() + 1,
-            data: []
+            data: [],
+            isPressedAddExpenseBtn: false
             // numberOfDaysInSelectedMonth: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate()
         }
     }
@@ -32,6 +33,10 @@ class Dashboard extends Component {
         this.setState({ data: childData })
     }
 
+    renderAddForm = () => {
+        this.setState({ isPressedAddExpenseBtn: true })
+    }
+
     render() {
         let currentMonth = new Date().getMonth() + 1
         if (currentMonth < 10) currentMonth = "0" + currentMonth
@@ -39,6 +44,7 @@ class Dashboard extends Component {
 
         return (
             <div className="dashboard-page">
+                {this.state.isPressedAddExpenseBtn && <AddExpenseForm selectedMonth={this.state.selectedMonth} />}
                 <div className="dashboard-header">
                     <input
                         type="month"
@@ -47,11 +53,13 @@ class Dashboard extends Component {
                         min="2017-01"
                         onChange={(event) => this.handleOnDateChange(event)}
                     />
-                    <Link
+                    <div
                         className="add-new-memo"
-                        to={"/add/"}>
+                        onClick={this.renderAddForm}
+                    >
+                        {/* to={"/add/"}> */}
                         <div title="Add expense/income" className="add-new-memo-btn">+</div>
-                    </Link>
+                    </div>
                 </div>
                 <div className="expenses-container">
                     <ExpensesList
