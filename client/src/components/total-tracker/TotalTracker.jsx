@@ -27,13 +27,13 @@ class TotalTracker extends Component {
                 total: 0
             },
             {
-                name: "Balance",
+                name: "Monthly profit",
                 total: 0
             }
         ]
         this.props.expenses.forEach(currentExpense => {
             if (Number(this.props.selectedMonth) === Number(currentExpense.date.substring(0, 10).split("-")[1])) {
-                if (currentExpense.categoryType === "income") {
+                if (currentExpense.categoryType === "Income") {
                     totalTracker[0].total += currentExpense.total
                 } else {
                     totalTracker[1].total += currentExpense.total
