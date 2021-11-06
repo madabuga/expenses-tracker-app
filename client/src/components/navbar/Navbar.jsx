@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as icons from '@fortawesome/free-solid-svg-icons';
 
 import "./Navbar.css";
 
 import { NAVBAR_ITEMS } from '../../constants/navbar.js';
+// import { Dashboard } from "./pages/dashboard/Dashboard";
+// import { Charts } from './pages/charts/Charts';
+// import { Categories } from './pages/categories/Categories';
+// import { About } from './pages/about/About';
 
 
 class Navbar extends Component {
@@ -15,10 +20,10 @@ class Navbar extends Component {
                     {
                         NAVBAR_ITEMS.map((item, index) => {
                             return (
-                                <div key={index} className="navbar-item">
+                                <Link key={index} to={item.pathTo} className="navbar-item">
                                     <FontAwesomeIcon className="navbar-icon" icon={icons[item.iconName]} />
                                     <span className="navbar-item-name">{item.name}</span>
-                                </div>
+                                </Link>
                             )
                         })
                     }

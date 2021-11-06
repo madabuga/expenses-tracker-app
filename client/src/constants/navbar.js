@@ -1,18 +1,22 @@
 export const NAVBAR_ITEMS = [
     {
         iconName: "faHome",
-        name: "Dashboard"
+        name: "Dashboard",
+        pathTo: "/"
     },
     {
         iconName: "faChartPie",
-        name: "Charts"
+        name: "Charts",
+        pathTo: "charts"
     },
     {
         iconName: "faTh",
-        name: "Categories"
+        name: "Categories",
+        pathTo: "categories"
     },
     {
         iconName: "faInfoCircle",
-        name: "About"
+        name: "About",
+        pathTo: "about"
     }
 ]

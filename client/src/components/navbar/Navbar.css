@@ -11,6 +11,8 @@
 }
 
 .navbar-item {
+    color:rgb(199, 199, 199);
+    text-decoration: none;
     display: flex;
     align-items: center;
     cursor: pointer;
