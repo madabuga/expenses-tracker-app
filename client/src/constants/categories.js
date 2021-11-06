@@ -78,7 +78,7 @@ export const CATEGORY_ICONS = [
         iconName: "faCar"
     },
     {
-        iconName: "faUserFriend"
+        iconName: "faUserFriends"
     },
     {
         iconName: "faMobileAlt"
@@ -99,7 +99,7 @@ export const CATEGORY_ICONS = [
         iconName: "faBicycle"
     },
     {
-        iconName: "faMotocycle"
+        iconName: "faMotorcycle"
     },
     {
         iconName: "faRunning"
@@ -138,7 +138,7 @@ export const CATEGORY_ICONS = [
         iconName: "faBaseballBall"
     },
     {
-        iconName: "faVolleyBallBall"
+        iconName: "faVolleyballBall"
     },
     {
         iconName: "faGamepad"

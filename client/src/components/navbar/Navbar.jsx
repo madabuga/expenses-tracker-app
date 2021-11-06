@@ -6,10 +6,6 @@ import * as icons from '@fortawesome/free-solid-svg-icons';
 import "./Navbar.css";
 
 import { NAVBAR_ITEMS } from '../../constants/navbar.js';
-// import { Dashboard } from "./pages/dashboard/Dashboard";
-// import { Charts } from './pages/charts/Charts';
-// import { Categories } from './pages/categories/Categories';
-// import { About } from './pages/about/About';
 
 
 class Navbar extends Component {
