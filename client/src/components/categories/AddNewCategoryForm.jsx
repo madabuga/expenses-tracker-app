@@ -89,8 +89,8 @@ class AddNewCategoryForm extends Component {
                                             <FontAwesomeIcon className="category-icon" icon={icons[this.state.chosenIcon]} />
                                         </div>
                                         <div className="colors-box">
-                                            <input onChange={this.onChangeBackgroundColor} className="color-input" type="color" />
                                             <input onChange={this.onChangeIconColor} className="color-input" type="color" />
+                                            <input onChange={this.onChangeBackgroundColor} className="color-input" type="color" />
                                         </div>
                                     </div>
                                     <input type="submit" value="DONE" className="confirm-btn-add-category" />

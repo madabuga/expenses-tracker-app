@@ -51,7 +51,7 @@ class ExpensesList extends Component {
     // }
 
     expensesList() {
-        return this.state.expenses.map(currentExpense => {
+        return this.state.expenses.reverse().map(currentExpense => {
             if (Number(this.props.selectedMonth) === Number(currentExpense.date.substring(0, 10).split("-")[1])) {
                 return (
                     <div key={currentExpense._id}>
