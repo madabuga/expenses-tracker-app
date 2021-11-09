@@ -1,35 +1,34 @@
 import React, { Component } from 'react';
-import { CATEGORY_ICONS } from '../../constants/categories.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as icons from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+
+import { CategoriesContainer } from '../../components/categories/CategoriesContainer';
 
 import "./Categories.css";
 
 
 class Categories extends Component {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            categories: []
+        };
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/categories/')
+            .then(response => {
+                this.setState({ categories: response.data })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
     render() {
         return (
             <div className="categories-page">
-                <div className="choose-icon-container">
-                    <p className="choose-icon-p-title">Choose an icon:</p>
-                    <div className="icons-container">
-                        {
-                            CATEGORY_ICONS.map((icon, index) => {
-                                return (
-                                    <div
-                                        key={index + icon.iconName}
-                                        className="category-icon-container">
-                                        <FontAwesomeIcon
-                                            className="category-icon"
-                                            icon={icons[icon.iconName]} />
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
+                <CategoriesContainer categories={this.state.categories} />
             </div>
         )
     }

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+
+.blur-container {
+    position: absolute;
+    height: 100vh;
+    width: 87.1vw;
+    margin-top: -6.8rem;
+    margin-left: -2.1rem;
+    background-color: rgba(0, 0, 0, 0.788);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-new-category-container-form {
+    max-height: 52vh;
+    min-height: 52vh;
+    overflow-y: scroll;
+    width: 63vw;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.048), 0 6px 10px 0 rgba(0, 0, 0, 0.096);
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-left: 0.8rem;
+}
+
+.icons-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose-icon-p-title {
+    font-size: 1.2rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.category-icon-container {
+    margin: 0.5rem;
+    border: 3px solid rgba(0, 0, 20, 0.788);
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.category-icon-container:hover {
+    background-color: rgb(42, 45, 56);
+    color: rgb(233, 233, 233);
+}
+
+.category-icon {
+    font-size: 1.3rem;
+}

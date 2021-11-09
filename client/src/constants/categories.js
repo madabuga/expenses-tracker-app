@@ -1,3 +1,5 @@
+export const CATEGORY_TYPE = ["Income", "Expense"]
+
 export const CATEGORY_ICONS = [
     {
         iconName: "faShoppingCart"
