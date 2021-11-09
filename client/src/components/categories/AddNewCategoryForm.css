@@ -14,8 +14,8 @@
 }
 
 .add-new-category-container-form {
-    max-height: 52vh;
-    min-height: 52vh;
+    max-height: 67vh;
+    min-height: 67vh;
     overflow-y: scroll;
     width: 63vw;
     background-color: rgb(231, 231, 231);
@@ -37,9 +37,19 @@
     padding: 0 1rem 1rem 1rem;
 }
 
-.category-icon-container {
+.form-category-p-title {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.select-color-p-title {
+    font-size: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.category-icon-container,
+.category-icon-container-form {
     margin: 0.5rem;
-    border: 3px solid rgba(0, 0, 20, 0.788);
+    border: 2px solid rgba(0, 0, 20, 0.788);
     height: 3rem;
     width: 3rem;
     display: flex;
@@ -49,11 +59,59 @@
     cursor: pointer;
 }
 
+.category-icon-container-form {
+    cursor: auto;
+    border: none;
+}
+
 .category-icon-container:hover {
-    background-color: rgb(42, 45, 56);
+    background-color: rgba(0, 0, 20, 0.842);
     color: rgb(233, 233, 233);
 }
 
 .category-icon {
     font-size: 1.3rem;
+}
+
+.add-category-form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-for-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colors-box {
+    display: flex;
+    flex-flow: column;
+    margin-left: 1rem;
+}
+
+.color-input {
+    width: 10rem;
+}
+
+.confirm-btn-add-category {
+    font-family: 'Cabin', sans-serif;
+    width: 15rem;
+    height: 2.5rem;
+    margin: 1.8rem 0 0.5rem 0;
+    outline: none;
+    border: none;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+    background-color: rgb(42, 45, 56);
+    color: #FFF;
+}
+
+.confirm-btn-add-category:hover {
+    background-color: rgb(42, 45, 56);
+    color: rgb(233, 233, 233);
+    cursor: pointer;
 }
