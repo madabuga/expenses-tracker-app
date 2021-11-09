@@ -27,9 +27,6 @@ export const CATEGORY_ICONS = [
         iconName: "faMoneyBillWave"
     },
     {
-        iconName: "faFileInvoiceDollar"
-    },
-    {
         iconName: "faWallet"
     },
     {

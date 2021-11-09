@@ -18,8 +18,10 @@ connection.once('open', () => {
 })
 
 const expensesRouter = require('./routes/expenses');
+const categoriesRouter = require('./routes/categories');
 
 app.use('/expenses', expensesRouter);
+app.use('/categories', categoriesRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
