@@ -6,7 +6,7 @@
     margin: 3rem 0 0 2rem;
     display: flex;
     justify-content: space-around;
-    width: 32rem;
+    width: 35vw;
     padding-top: 0.5rem 0 0.5rem 0;
 }
 
@@ -43,4 +43,5 @@
 
 .expenses-container {
     display: flex;
+    flex-flow: column-reverse;
 }

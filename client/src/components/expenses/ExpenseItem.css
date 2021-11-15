@@ -11,7 +11,7 @@
 }
 
 .expense-item-information {
-    width: 30rem;
+    width: 98%;
     display: flex;
     justify-content: space-between;
 }
