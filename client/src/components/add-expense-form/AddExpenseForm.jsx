@@ -14,7 +14,8 @@ class AddExpenseForm extends Component {
             total: '',
             type: 'Expense',
             category: 'Shopping',
-            date: new Date()
+            date: new Date(),
+            categories: this.props.categories
         }
     }
 
@@ -57,14 +58,15 @@ class AddExpenseForm extends Component {
                     <input type="text" required onChange={this.onChangeMemo} placeholder="Memo" />
                     <input required onChange={this.onChangeTotal} pattern="^\d*(\.\d{0,2})?$" placeholder="Total: 0.00" />
                     <select required onChange={this.onChangeType}>
-                        {/* <option selected disabled hidden>Select type</option> */}
                         <option>Expense</option>
                         <option>Income</option>
                     </select>
                     <select required onChange={this.onChangeCategory}>
-                        {/* <option selected disabled hidden>Select a category</option> */}
-                        <option>Shopping</option>
-                        <option>Bills</option>
+                        {
+                            this.state.categories.map(category => {
+                                return (this.state.type === category.type) && <option>{category.name}</option>
+                            })
+                        }
                     </select>
                     <input type="month" onChange={this.onChangeDate} defaultValue={2021 + "-" + this.props.selectedMonth} />
                     <input type="submit" value="CONFIRM" className="confirm-btn-add-expense-income" />

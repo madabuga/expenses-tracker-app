@@ -2,6 +2,7 @@
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     display: flex;
     font-size: 0.9rem;
+    background-color: rgb(236, 237, 255);
 }
 
 .expense-item:hover {
@@ -10,24 +11,57 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.048), 0 6px 10px 0 rgba(0, 0, 0, 0.096);
 }
 
+.vertical-bar {
+    height: 1.2rem;
+    width: 0.15rem;
+    background-color: rgba(104, 104, 104, 0.603);
+    margin-right: 0.7rem;
+}
+
+.memo-title-in-table {
+    color: rgba(163, 163, 163, 0.582);
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
 .expense-item-information {
-    width: 98%;
+    width: 78vw;
     display: flex;
     justify-content: space-between;
+    padding: 0.2rem 1rem 0.2rem 1rem;
 }
 
-/* .edit-option-item {
-    color: #000;
-    margin-left: 1rem;
+.category-icon-and-memo {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
 }
 
-.delete-option-item {
-    color: rgb(43, 20, 20);
-    margin-left: 0.5rem;
+.icon-container-style {
+    height: 1.8rem;
+    width: 1.8rem;
+    display: flex;
+    margin-right: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
 
-.edit-option-item-icon,
-.delete-option-item-icon {
-    height: 0.7rem;
-    width: 0.7rem;
-} */
+.icon-category-info {
+    display: flex;
+    align-items: center;
+    width: 17rem;
+}
+
+.single-category-item-icon-style {
+    font-size: 0.9rem;
+}
+
+.total-expense-or-income {
+    left: auto;
+    right: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+}

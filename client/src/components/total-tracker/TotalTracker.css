@@ -1,9 +1,8 @@
 .total-tracker {
     height: 7rem;
     width: 40vw;
-    background-color: rgba(243, 243, 243, 0.493);
     margin-left: 40.3vw;
-    margin-top: -7rem;
+    margin-top: -6.2rem;
     display: flex;
     justify-content: space-evenly;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,9 +17,20 @@ class Dashboard extends Component {
         this.state = {
             selectedMonth: new Date().getMonth() + 1,
             data: [],
-            isPressedAddExpenseBtn: false
+            isPressedAddExpenseBtn: false,
+            categories: []
             // numberOfDaysInSelectedMonth: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate()
         }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/categories/')
+            .then(response => {
+                this.setState({ categories: response.data })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     handleOnDateChange = (event) => {
@@ -48,7 +60,11 @@ class Dashboard extends Component {
 
         return (
             <div className="dashboard-page">
-                {this.state.isPressedAddExpenseBtn && <AddExpenseForm parentDashboardCallback={this.handleAddExpenseFormCallback} selectedMonth={this.state.selectedMonth} />}
+                {this.state.isPressedAddExpenseBtn &&
+                    <AddExpenseForm
+                        categories={this.state.categories}
+                        parentDashboardCallback={this.handleAddExpenseFormCallback}
+                        selectedMonth={this.state.selectedMonth} />}
                 <div className="dashboard-header">
                     <input
                         type="month"
@@ -66,6 +82,7 @@ class Dashboard extends Component {
                 </div>
                 <div className="expenses-container">
                     <ExpensesList
+                        categories={this.state.categories}
                         selectedMonth={this.state.selectedMonth}
                         parentCallback={this.handleCallback} />
                     <TotalTracker

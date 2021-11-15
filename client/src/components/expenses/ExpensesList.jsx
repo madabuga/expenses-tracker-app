@@ -11,6 +11,7 @@ class ExpensesList extends Component {
 
         this.state = {
             expenses: [],
+            categories: this.props.categories
             // orderedList: []
         };
     }
@@ -51,12 +52,13 @@ class ExpensesList extends Component {
     // }
 
     expensesList() {
-        return this.state.expenses.reverse().map(currentExpense => {
+        return this.state.expenses.reverse().map((currentExpense, idx) => {
             if (Number(this.props.selectedMonth) === Number(currentExpense.date.substring(0, 10).split("-")[1])) {
                 return (
                     <div key={currentExpense._id}>
                         {/* <div>{currentExpense.date.substring(0, 10).split("-")[2]}/{currentExpense.date.substring(0, 10).split("-")[1]}</div> */}
                         <ExpenseItem
+                            categories={this.props.categories}
                             expense={currentExpense}
                             deleteExpense={this.deleteExpense}
                             key={currentExpense._id} />
