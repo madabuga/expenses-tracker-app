@@ -22,7 +22,7 @@
 
 .navbar-item:hover {
     color: #FFF;
-    background-color: rgb(30, 28, 37);
+    background-color: rgba(38, 36, 46, 0.288);
 }
 
 .navbar-icon {
@@ -37,4 +37,5 @@
 
 .item-active {
     color: #FFF;
+    background-color: rgb(38, 36, 46);
 }

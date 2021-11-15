@@ -2,7 +2,7 @@ export const NAVBAR_ITEMS = [
     {
         iconName: "faHome",
         name: "Dashboard",
-        pathTo: "/"
+        pathTo: ""
     },
     {
         iconName: "faChartPie",
