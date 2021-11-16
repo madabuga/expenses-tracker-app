@@ -14,7 +14,7 @@ class AddExpenseForm extends Component {
             total: '',
             type: 'Expense',
             category: 'Shopping',
-            date: new Date(),
+            date: this.props.selectedYear + "-" + this.props.selectedMonth,
             categories: this.props.categories
         }
     }
@@ -47,6 +47,7 @@ class AddExpenseForm extends Component {
     }
 
     render() {
+        console.log(this.props.selectedMonth)
         return (
             <div className="blur-container">
                 <form className="add-expense-form" onSubmit={this.onSubmit}>
@@ -64,11 +65,11 @@ class AddExpenseForm extends Component {
                     <select required onChange={this.onChangeCategory}>
                         {
                             this.state.categories.map(category => {
-                                return (this.state.type === category.type) && <option>{category.name}</option>
+                                return (this.state.type === category.type) && <option key={category.name}>{category.name}</option>
                             })
                         }
                     </select>
-                    <input type="month" onChange={this.onChangeDate} defaultValue={2021 + "-" + this.props.selectedMonth} />
+                    <input type="month" onChange={this.onChangeDate} defaultValue={this.props.selectedYear + "-" + this.props.selectedMonth} />
                     <input type="submit" value="CONFIRM" className="confirm-btn-add-expense-income" />
                 </form>
             </div>

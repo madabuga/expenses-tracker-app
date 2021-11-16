@@ -42,9 +42,8 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Expense.findById(req.params.id)
         .then(expense => {
-            expense.username = req.body.username;
-            expense.description = req.body.description;
-            expense.duration = Number(req.body.duration);
+            expense.memo = req.body.memo;
+            expense.total = Number(req.body.total);
             expense.date = Date.parse(req.body.date);
             expense.categoryType = req.body.categoryType;
             expense.categoryName = req.body.categoryName;

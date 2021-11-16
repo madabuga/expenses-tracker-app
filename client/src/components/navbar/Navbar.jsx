@@ -29,7 +29,7 @@ class Navbar extends Component {
                     {
                         NAVBAR_ITEMS.map((item, index) => {
                             return (
-                                <div>
+                                <div key={index}>
                                     {
                                         (this.state.currentURL === "/" + item.pathTo) ?
                                             <Link key={index} to={item.pathTo} className="navbar-item item-active">

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as icon from '@fortawesome/free-solid-svg-icons';
 
@@ -20,7 +19,7 @@ class ExpenseItem extends Component {
                             categories.map(category => {
                                 return (
                                     (category.name === this.props.expense.categoryName) &&
-                                    <div className="icon-category-info">
+                                    <div key={category._id + category.name} className="icon-category-info">
                                         <div
                                             className="icon-container-style"
                                             style={{ backgroundColor: category.backgroundColor, color: category.color }}>
@@ -45,17 +44,6 @@ class ExpenseItem extends Component {
                         }
                     </div>
                 </div>
-                {/* <Link
-                    className="edit-option-item"
-                    to={"/edit/" + this.props.expense._id}>
-                    <FontAwesomeIcon className="edit-option-item-icon" icon={faEdit} />
-                </Link> */}
-                {/* <a
-                    className="delete-option-item"
-                    href="/"
-                    onClick={() => { this.props.deleteExpense(this.props.expense._id) }}>
-                    <FontAwesomeIcon className="delete-option-item-icon" icon={faTimes} />
-                </a> */}
             </div>
 
         )

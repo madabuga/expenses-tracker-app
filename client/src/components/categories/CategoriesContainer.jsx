@@ -29,7 +29,9 @@ class CategoriesContainer extends Component {
         let categories = this.props.categories
         return (
             <div>
-                {this.state.isAddNewCategoryOpen && <AddNewCategoryForm parentCategoryContainerCallback={this.handleAddNewCategoryFormCallback} />}
+                {this.state.isAddNewCategoryOpen &&
+                    <AddNewCategoryForm
+                        parentCategoryContainerCallback={this.handleAddNewCategoryFormCallback} />}
                 <div
                     className="add-new-category-btn"
                     onClick={this.renderAddNewCategoryOnClick}>
@@ -45,7 +47,7 @@ class CategoriesContainer extends Component {
                                         {
                                             categories.map(category => {
                                                 return (category.type === categoryType) &&
-                                                    <div className="single-category-item" key={category.id} >
+                                                    <div className="single-category-item" key={category._id} >
                                                         <div
                                                             className="icon-container"
                                                             style={{ backgroundColor: category.backgroundColor, color: category.color }}>

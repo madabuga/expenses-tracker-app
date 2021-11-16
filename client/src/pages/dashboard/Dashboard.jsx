@@ -15,10 +15,14 @@ class Dashboard extends Component {
         super(props)
 
         this.state = {
-            selectedMonth: new Date().getMonth() + 1,
+            selectedDate: new Date(),
+            selectedMonth: null,
+            selectedYear: new Date().getFullYear(),
             data: [],
             isPressedAddExpenseBtn: false,
             categories: []
+
+            // ("0" + (b.getMonth() + 1)).slice(-2)
             // numberOfDaysInSelectedMonth: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate()
         }
     }
@@ -35,8 +39,13 @@ class Dashboard extends Component {
 
     handleOnDateChange = (event) => {
         let eventValue = event.target.value
+        let month = Number(eventValue.split("-")[1])
+        if (month < 10) month = "0" + month
+
         this.setState({
-            selectedMonth: Number(eventValue.split("-")[1]),
+            selectedDate: event.target.value,
+            selectedMonth: month,
+            selectedYear: Number(eventValue.split("-")[0])
             // numberOfDaysInSelectedMonth: new Date(Number(eventValue.split("-")[0]), Number(eventValue.split("-")[1]), 0).getDate()
         })
     }
@@ -64,7 +73,8 @@ class Dashboard extends Component {
                     <AddExpenseForm
                         categories={this.state.categories}
                         parentDashboardCallback={this.handleAddExpenseFormCallback}
-                        selectedMonth={this.state.selectedMonth} />}
+                        selectedMonth={this.state.selectedMonth || ("0" + (this.state.selectedDate.getMonth() + 1)).slice(-2)}
+                        selectedYear={this.state.selectedYear} />}
                 <div className="dashboard-header">
                     <input
                         type="month"
@@ -83,10 +93,12 @@ class Dashboard extends Component {
                 <div className="expenses-container">
                     <ExpensesList
                         categories={this.state.categories}
-                        selectedMonth={this.state.selectedMonth}
+                        selectedMonth={this.state.selectedMonth || ("0" + (this.state.selectedDate.getMonth() + 1)).slice(-2)}
+                        selectedYear={this.state.selectedYear}
                         parentCallback={this.handleCallback} />
                     <TotalTracker
-                        selectedMonth={this.state.selectedMonth}
+                        selectedMonth={this.state.selectedMonth || ("0" + (this.state.selectedDate.getMonth() + 1)).slice(-2)}
+                        selectedYear={this.state.selectedYear}
                         expenses={this.state.data} />
                 </div>
 

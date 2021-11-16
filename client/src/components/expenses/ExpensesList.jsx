@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ExpenseItem } from './ExpenseItem';
 
 import './ExpensesList.css';
+import { EditExpenseItem } from '../edit-expense-item/EditExpenseItem';
 
 
 class ExpensesList extends Component {
@@ -11,7 +12,8 @@ class ExpensesList extends Component {
 
         this.state = {
             expenses: [],
-            categories: this.props.categories
+            categories: this.props.categories,
+            expenseItemId: null
             // orderedList: []
         };
     }
@@ -27,14 +29,6 @@ class ExpensesList extends Component {
             })
     }
 
-    deleteExpense(id) {
-        axios.delete('http://localhost:5000/expenses/' + id)
-            .then(response => { console.log(response.data) });
-
-        this.setState({
-            expenses: this.state.expenses.filter(el => el._id !== id)
-        })
-    }
 
     // orderExpensesList() {
     //     let list = []
@@ -53,14 +47,17 @@ class ExpensesList extends Component {
 
     expensesList() {
         return this.state.expenses.reverse().map((currentExpense, idx) => {
-            if (Number(this.props.selectedMonth) === Number(currentExpense.date.substring(0, 10).split("-")[1])) {
+            let selectedMonth = Number(this.props.selectedMonth)
+            let selectedYear = Number(this.props.selectedYear)
+            let expenseMonth = Number(currentExpense.date.substring(0, 10).split("-")[1])
+            let expenseYear = Number(currentExpense.date.substring(0, 10).split("-")[0])
+            if ((selectedMonth === expenseMonth) && (selectedYear === expenseYear)) {
                 return (
-                    <div key={currentExpense._id}>
+                    <div onClick={() => this.setState({ expenseItemId: currentExpense._id })} key={currentExpense._id}>
                         {/* <div>{currentExpense.date.substring(0, 10).split("-")[2]}/{currentExpense.date.substring(0, 10).split("-")[1]}</div> */}
                         <ExpenseItem
                             categories={this.props.categories}
                             expense={currentExpense}
-                            deleteExpense={this.deleteExpense}
                             key={currentExpense._id} />
                     </div>
                 )
@@ -73,13 +70,30 @@ class ExpensesList extends Component {
         this.props.parentCallback(this.state.expenses);
     }
 
+    handleEditExpenseItemCallback = (itemId) => {
+        this.setState({ expenseItemId: itemId })
+    }
+
     render() {
-        return (
-            <div className="expenses-list">
-                {/* {this.orderExpensesList()} */}
-                {this.expensesList()}
-            </div>
-        )
+        if (this.state.expenses) {
+            return (
+                <div className="expenses-list">
+                    {
+                        (this.state.expenseItemId) &&
+                        <EditExpenseItem
+                            expenses={this.state.expenses}
+                            categories={this.props.categories}
+                            idItem={this.state.expenseItemId}
+                            selectedMonth={this.props.selectedMonth}
+                            selectedYear={this.props.selectedYear}
+                            parentExpensesListCallback={this.handleEditExpenseItemCallback}
+                        />
+                    }
+                    {/* {this.orderExpensesList()} */}
+                    {this.expensesList()}
+                </div>
+            )
+        }
     }
 }
 
