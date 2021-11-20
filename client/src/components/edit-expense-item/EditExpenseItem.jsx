@@ -78,7 +78,7 @@ class EditExpenseItem extends Component {
 
     render() {
         return (
-            <div className="blur-container">
+            <div className="edit-blur-container">
                 <form className="add-expense-form" onSubmit={this.onSubmit}>
                     <FontAwesomeIcon onClick={this.onTrigger} className="close-window-popup-icon" icon={faTimes} />
                     <input type="text" defaultValue={this.state.memo} required onChange={this.onChangeEditMemo} placeholder="Memo" />
@@ -94,13 +94,9 @@ class EditExpenseItem extends Component {
                             })
                         }
                     </select>
-                    {/* ---------------------------------------------------------------------------------------------------------- */}
-                    {/* ---------------------------------------------------------------------------------------------------------- */}
                     <input type="month" required onChange={this.onChangeDate} defaultValue={this.props.selectedYear + "-" + this.props.selectedMonth} />
-                    {/* ---------------------------------------------------------------------------------------------------------- */}
-                    {/* ---------------------------------------------------------------------------------------------------------- */}
-                    <input type="submit" value="UPDATE" className="confirm-btn-add-expense-income" />
-                    <input onClick={this.deleteExpense} value="DELETE" className="confirm-btn-add-expense-income" />
+                    <input type="submit" value="UPDATE" className="confirm-btn-edit-expense-income" />
+                    <div onClick={this.deleteExpense} value="DELETE" className="confirm-btn-delete-expense-income">DELETE</div>
                 </form>
             </div>
         )

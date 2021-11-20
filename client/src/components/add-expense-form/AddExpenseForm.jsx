@@ -49,7 +49,7 @@ class AddExpenseForm extends Component {
     render() {
         console.log(this.props.selectedMonth)
         return (
-            <div className="blur-container">
+            <div className="add-blur-container">
                 <form className="add-expense-form" onSubmit={this.onSubmit}>
                     <FontAwesomeIcon onClick={this.onTrigger} className="close-window-popup-icon" icon={faTimes} />
                     <div className="div-p-title">
